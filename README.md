@@ -1,6 +1,6 @@
 # ModelAlias
 
-Use alias in `$this->uses`
+Use alias in `Controller::uses`
 
 ```php
 <?php
