@@ -21,7 +21,7 @@
     },
     "autoload": {
         "files" : [
-            "Lib/Trait/MergeVarsTrait.php"
+            "Lib/Trait/ModelAliasTrait.php"
         ]
     }
 }
