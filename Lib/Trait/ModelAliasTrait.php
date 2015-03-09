@@ -47,9 +47,11 @@ trait ModelAliasTrait
 
             // Load alias model
             $modelClass = $this->usesAlias[$alias];
+            ClassRegistry::removeObject($alias);
             $this->{$alias} = ClassRegistry::init(array(
-                'class' => $modelClass,
+                'class' => $modelClass, 'name' => $modelClass, 'alias' => $alias, 'id' => $id
             ));
+
             $this->{$alias}->alias = $alias;
 
             if (!$this->{$alias}) {
