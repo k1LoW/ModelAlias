@@ -45,10 +45,13 @@ trait ModelAliasTrait
                 $this->uses[] = $alias;
             }
 
+            // Load alias model
             $modelClass = $this->usesAlias[$alias];
             $this->{$alias} = ClassRegistry::init(array(
-                'class' => $modelClass, 'alias' => $alias, 'id' => $id,
+                'class' => $modelClass,
             ));
+            $this->{$alias}->alias = $alias;
+
             if (!$this->{$alias}) {
                 throw new MissingModelException($modelClass);
             }
